@@ -1,0 +1,72 @@
+indian_states = {
+    "Andhra Pradesh": "AP",
+    "Arunachal Pradesh": "AR",
+    "Assam": "AS",
+    "Bihar": "BR",
+    "Chhattisgarh": "CG",
+    "Goa": "GA",
+    "Gujarat": "GJ",
+    "Haryana": "HR",
+    "Himachal Pradesh": "HP",
+    "Jharkhand": "JH",
+    "Karnataka": "KA",
+    "Kerala": "KL",
+    "Madhya Pradesh": "MP",
+    "Maharashtra": "MH",
+    "Manipur": "MN",
+    "Meghalaya": "ML",
+    "Mizoram": "MZ",
+    "Nagaland": "NL",
+    "Odisha": "OD",
+    "Punjab": "PB",
+    "Rajasthan": "RJ",
+    "Sikkim": "SK",
+    "Tamil Nadu": "TN",
+    "Telangana": "TG",
+    "Tripura": "TR",
+    "Uttar Pradesh": "UP",
+    "Uttarakhand": "UT",  # Added comma here
+    "West Bengal": "WB"    # Added comma here
+}
+
+other_countries = {
+    "USA": "US",
+    "United Kingdom": "UK",
+    "Canada": "CA",
+    "Australia": "AU",
+    "Germany": "DE",
+    "France": "FR",
+    "Japan": "JP",
+    "China": "CN",
+    "Brazil": "BR",
+    "Russia": "RU"
+}
+
+address = input("Enter a state or country: ")
+weight = int(input('Package weight: ') )# Convert input to float for weight comparison
+price = None
+if address in indian_states:
+    if weight <= 2:
+        price = 100
+    elif weight <= 6:
+        price = 70 * weight
+    elif weight <= 10:
+        price = 100 * weight
+    elif weight <= 20:
+        price = 250 * weight
+    else:
+        print("Package too heavy, won't ship")
+elif address in other_countries:
+    if weight <= 2:
+        price = 500
+    elif weight <= 6:
+        price = 650 * weight
+    elif weight <= 10:
+        price = 800 * weight
+    else:
+        print("Package too heavy, won't ship")        
+else: 
+      print("\n country or state not available")
+      
+if price is not None:     
+    print("Shipping price:", price)      
